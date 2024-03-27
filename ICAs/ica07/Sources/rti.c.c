@@ -2,8 +2,8 @@
 #include "derivative.h" /* derivative-specific definitions */
 #include "rti.h.h"
 
-extern volatile unsigned long rtiMasterCount;
-void RTI_Delay_ms(unsigned long ms){
+
+void RTI_Delay_ms(unsigned int ms){
     unsigned long i;
 
     // Stop the RTI
