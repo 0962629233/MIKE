@@ -203,10 +203,15 @@ SWL_Init();
 /********************************************************************/
 // Functions
 /********************************************************************/
-int GetCount(void)
-{
-
+int GetCount(void) {
+    int count = 0;
+    // Check each LED bit in PT1AD1 and increment count if on
+    if (PT1AD1 & SWL_RED) count++;
+    if (PT1AD1 & SWL_YELLOW) count++;
+    if (PT1AD1 & SWL_GREEN) count++;
+    return count;
 }
+
 
 /********************************************************************/
 // Interrupt Service Routines
